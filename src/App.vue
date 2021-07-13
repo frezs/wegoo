@@ -1,14 +1,17 @@
 <template>
-  <RouterView></RouterView>
+  <ConfigProvider>
+    <AppProvider>
+      <RouterView />
+    </AppProvider>
+  </ConfigProvider>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<script setup lang='ts'>
+import { ConfigProvider } from 'vant'
+import { AppProvider } from '@/components/Application'
+import { useTitle } from './hooks/web/useTitle'
+import Layout from '@/layouts/index.vue'
+
+useTitle()
+
+</script>
