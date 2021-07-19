@@ -41,7 +41,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        modifyVars: {},
+        // 合并变量
+        modifyVars: {
+          'hack': `true;@import (reference) "${resolve('src/styles/config.less')}";`  // 导入less变量合并路径
+        },
         javascriptEnabled: true,
       },
     },

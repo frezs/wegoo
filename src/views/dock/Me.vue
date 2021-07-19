@@ -1,6 +1,5 @@
 <template>
   <h2>Me</h2>
-  <Layout :active="3"></Layout>
 </template>
 
 <script setup lang='ts'>

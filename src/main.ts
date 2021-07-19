@@ -1,4 +1,3 @@
-//import '@/styles/index.css'
 import '@/styles/tailwind.css'
 import '@/styles/index.less'
 

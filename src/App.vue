@@ -1,7 +1,9 @@
 <template>
   <ConfigProvider>
     <AppProvider>
-      <RouterView />
+      <Layout>
+        <RouterView />
+      </Layout>
     </AppProvider>
   </ConfigProvider>
 </template>

@@ -1,4 +1,5 @@
 <template>
+  <slot></slot>
   <AppDock :active="active" :dock-items="docks" @change="change"></AppDock>
 </template>
 
@@ -25,7 +26,7 @@ const docks = [
   {
     title: '分类',
     path: '/classfly',
-    icon: 'home-o',
+    icon: 'apps-o',
   }, {
     title: '购物车',
     path: '/cart',
