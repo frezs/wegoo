@@ -1,14 +1,19 @@
 <template>
+  <AppNav v-if="!navigation"></AppNav>
   <slot></slot>
-  <AppDock :active="active" :dock-items="docks" @change="change"></AppDock>
+  <AppDock v-if="!isDack" :active="active" :dock-items="docks" @change="change"></AppDock>
 </template>
 
 <script setup lang='ts'>
-import AppDock from "@/components/AppDock/AppDock.vue"
+import AppDock from '@/components/AppDock/AppDock.vue'
+import AppNav from '@/components/AppNav/AppNav.vue'
+import { useMeta } from '/@/hooks/web/useMate'
 
 defineProps({
   active: Number
 })
+
+const [navigation, isDack] = useMeta(['navigation', 'isDack'])
 
 const emits = defineEmits(['change'])
 
@@ -25,7 +30,7 @@ const docks = [
   },
   {
     title: '分类',
-    path: '/classfly',
+    path: '/classify',
     icon: 'apps-o',
   }, {
     title: '购物车',

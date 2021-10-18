@@ -1,5 +1,5 @@
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import type { CustomResqusetOptions, CustomResponseResult } from '#/axios'
+import type { CustomResqusetOptions, CustomResponseResult } from '/#/axios'
 import axios from "axios"
 import { cloneDeep, isFunction } from 'lodash-es'
 

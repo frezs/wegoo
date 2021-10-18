@@ -1,7 +1,8 @@
-import { unref, watch } from 'vue'
+import { ref, unref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useTitle as usePageTitle } from '@vueuse/core'
-import { useGlobSetting } from '@/hooks/setting'
+import { useGlobSetting } from '/@/hooks/setting'
+import { REDIRECT_NAME } from '/@/router/routes/constant'
 
 export function useTitle() {
 
@@ -17,7 +18,7 @@ export function useTitle() {
     () => {
       const route = unref(currentRoute)
       // 判断是否是排除路由外
-      if (route.name === '') {
+      if (route.name === REDIRECT_NAME) {
         return
       }
       // 设置页面标题
@@ -26,4 +27,28 @@ export function useTitle() {
     },
     { immediate: true }
   )
+}
+
+export function getTitle() {
+  const { currentRoute } = useRouter()
+  const currentTitle = ref<string | undefined>(undefined)
+  watch(
+    () => currentRoute.value.path,
+    () => {
+      const route = unref(currentRoute)
+      if (route.name === REDIRECT_NAME) {
+        return
+      }
+      currentTitle.value = route?.meta?.title as string
+    },
+    { immediate: true }
+  )
+  return currentTitle
+}
+
+export function setTitle(val: string) {
+  // 获取当前页标题
+  const pageTitle = usePageTitle()
+  // 设置新标题
+  pageTitle.value = `${pageTitle.value}${val}`
 }

@@ -11,8 +11,8 @@
     "lib": ["esnext", "dom"],
     "baseUrl": ".", //基础目录
     "paths": {
-      "@/*": ["src/*"], // src/* 别名设置
-      "#/*": ["types/*"] // types/* 别名设置
+      "/@/*": ["src/*"], // src/* 别名设置
+      "/#/*": ["types/*"] // types/* 别名设置
     }
   },
   "include": [

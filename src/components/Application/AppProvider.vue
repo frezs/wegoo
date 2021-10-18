@@ -4,7 +4,7 @@
 
 <script setup lang='ts'>
 import { defineProps, toRefs } from 'vue'
-import { prefixCls as defaultPrefixCls } from '@/setting/designSetting'
+import { prefixCls as defaultPrefixCls } from '/@/setting/designSetting'
 import { createAppProviderContext } from './useAppContext'
 // 定义props
 const props =  defineProps({

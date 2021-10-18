@@ -1,8 +1,8 @@
 import type { CreateAxiosConfig, AxiosTransform } from './aixos'
-import type { CustomResqusetOptions } from '#/axios'
+import type { CustomResqusetOptions } from '/#/axios'
 
 import { Aixos } from './aixos'
-import { objectDeepMerge } from '@/utils'
+import { objectDeepMerge } from '/@/utils'
 
 
 const transform: AxiosTransform = {

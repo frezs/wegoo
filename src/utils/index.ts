@@ -2,6 +2,7 @@ import type { App } from 'vue'
 
 import { isObject } from 'lodash-es'
 
+// 深合并对象
 export function objectDeepMerge<T = any>(src: any = {}, target: any = {}): T {
   let key: string;
   for (key in target) {
@@ -21,3 +22,6 @@ export const withInstall = <T>(component: T, alias?: string) => {
   };
   return component as T & Plugin;
 };
+
+// 错误处理
+export const handleError = (e: Error) => console.error(e)
